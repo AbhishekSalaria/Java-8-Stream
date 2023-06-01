@@ -44,10 +44,10 @@ public class Executor {
         System.out.println(map);
 
         //Average age of male and female employees
-        Map<String,Double> avgage = employees.stream()
+        Map<String,Double> avg = employees.stream()
                 .collect(Collectors.groupingBy(Employee::getGender,Collectors.averagingInt(Employee::getAge)));
 
-        System.out.println(avgage);
+        System.out.println(avg);
 
         List<Integer> list = Arrays.asList(1,4,5,6,22,3,90,89,2,1,3,4,55,6);
 
@@ -72,7 +72,7 @@ public class Executor {
 
         //GetSquare Average for numbers whose squared values are less than 500
         double squaredAveragelt500 = list.stream().map(x -> x*x)
-                .filter(x -> x > 500)
+                .filter(x -> x < 500)
                 .mapToInt(x->x).average().getAsDouble();
         System.out.println(squaredAveragelt500);
 
